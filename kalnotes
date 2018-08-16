@@ -4,6 +4,12 @@ Stuff tried so far:
 Git/GitHub
 	user:arbju, PW: regular
 	https://www.elegantthemes.com/blog/resources/git-and-github-a-beginners-guide-for-complete-newbies
+	git clone "PATH from GitHub clone/copy button"
+	git status
+	git add
+	git commit -m "message"
+	git push
+
 Python3.6
 	started tutorial on Python.org
 
