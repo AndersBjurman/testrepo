@@ -1,0 +1,54 @@
+#! /usr/bin/env python
+# today's featured article from wikipedia scraped into ktouch lesson
+
+from urllib import FancyURLopener
+import re
+
+# a custom urlopener with firefox2 user agent
+class MyOpener(FancyURLopener) :
+        version = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11'
+
+# get the wikipedia mainpage
+myopener = MyOpener()
+address = "http://en.wikipedia.org/wiki/Main_Page"
+wikiEN = myopener.open(address).read()
+
+# parse out Todays Featured Article
+tfa = wikiEN.split('<div id="mp-tfa" style="padding:2px 5px">\n')[1].split('Recently featured:')[0]
+tfa = re.sub('\n','',tfa)
+
+# strip out the html tags
+p = re.compile(r'<.*?>');
+tdaStripped = p.sub('', tfa);
+
+# break string into an array of strings ~70 characters long
+l = len(tdaStripped)
+lineArray = []
+c = 0
+while c <= l :
+        oldc = c
+        c += 70
+        if oldc <= (l - 70) :
+                while tdaStripped[c] != ' ' :
+                        c += 1
+                lineArray.append(tdaStripped[oldc:c].lstrip())
+        elif (l - oldc) > 50 :
+                lineArray.append(tdaStripped[oldc:l].lstrip())
+
+# create /usr/share/kde4/apps/ktouch/wikipedia.ktouch.xml
+# Lesson will be called 'Wikipedia English Daily Featured Article (auto-generated)'
+output = '''<?xml version="1.0" encoding="UTF-8"?>
+<KTouchLecture>
+ <Title>Wikipedia English Daily Featured Article (auto-generated)</Title>
+ <Comment>KTouch training file generated</Comment>
+ <FontSuggestions>Monospace</FontSuggestions>
+ <Levels>
+  <Level>
+   <NewCharacters>Wikipedia Article</NewCharacters>'''
+for line in lineArray :
+        output += '\n    <Line>' + line + '</Line>'
+output += '\n  </Level>\n </Levels>\n</KTouchLecture>'
+outFile = open('/usr/share/kde4/apps/ktouch/wikipedia.ktouch.xml', 'w')
+outFile.write(output)
+outFile.close()
+
