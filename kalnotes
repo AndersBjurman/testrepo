@@ -24,10 +24,11 @@ SSH
 	used putty.exe to ssh from win10                        to Ubuntu-Thinkpad       using ip: 192.168.0.10 on port 22    (pw: my regular)
 	used putty.exe to ssh from win10 to kalandar-Ubuntu in Virtualbox on Win10       using ip: 127.0.0.1    on port 2222  (pw: my regular)	
 	                  ssh from kalandar-Ubuntu inVirtualbox-Win10 to Ubuntu-Thinkpad using ip: 192.168.0.10 on port 22    (pw: my regular)
-	also try: thinkpad to virtualbox "looks like the win10 is 192.168.0.8, but how to get to the vbox?"
- 	also try: thinkpad to win10
+	used iTerminal to ssh from Iphone   to kalandar-Ubuntu in Virtualbox on Win10    using ip: 192.168.0.11 on port 22    (pw: my regular)
+	                  ssh from thinkpad to kalandar-Ubuntu in Virtualbox on Win10    using ip: 192.168.0.11 on port 22    (pw: my regular)
+ 	also try: thinkpad to win10       "looks like the win10 is 192.168.0.8 and needs a ssh server installed"
 
-	192.168.56.1 is the address the vbox guests csn access their host (the win10)
+	192.168.56.1 is the address the vbox guests can access their host with (the win10)
 
 C
 	https://www.tutorialspoint.com/cprogramming/index.htm	
