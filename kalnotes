@@ -16,6 +16,18 @@ Python3.6
 SSH
 	Followd along:  https://www.youtube.com/watch?time_continue=313&v=DbPDraCYju8
 
+	ssh user@domain -p xx     ex: ssh kalandar@192.168.0.10 -p 2222
+
+	virtualbox settings: network\NAT, Portforwarding: TCP, hostIP:127.0.0.1, hostPort:2222, guestIP:10.0.2.15, guestPort:22
+
+	used putty.exe to ssh from win10                        to Ubuntu-Thinkpad       using ip: 192.168.0.10 on port 22    (pw: my regular)
+	used putty.exe to ssh from win10 to kalandar-Ubuntu in Virtualbox on Win10       using ip: 127.0.0.1    on port 2222  (pw: my regular)	
+	                  ssh from kalandar-Ubuntu inVirtualbox-Win10 to Ubuntu-Thinkpad using ip: 192.168.0.10 on port 22    (pw: my regular)
+	also try: thinkpad to virtualbox "looks like the win10 is 192.168.0.8, but how to get to the vbox?"
+ 	also try: thinkpad to win10
+
+	192.168.56.1 is the address the vbox guests csn access their host (the win10)
+
 C
 	https://www.tutorialspoint.com/cprogramming/index.htm	
 	gcc
@@ -36,6 +48,40 @@ Vim
 	e
 	b
 	!, %
+
+	:find *____*        "then use TAB KEY to walk through fuzzy searchof files"
+	:b ___              "if previously opened file (shows up with :ls), ___ if unique, opens it,its the buffer command"
+	:set _____?         "gives current value of settings":
+
+
+.vimrc
+  1 "Enable syntax highlighting
+  2         syntax enable                   
+  3 
+  4 "Enable search high lighting
+  5         set hlsearch                    
+  6 
+  7 "Ignore case when searching
+  8         set ignorecase                  
+  9 
+ 10 "Incremental searches that show partial matches
+ 11         set incsearch                   
+ 12 
+ 13 "Show line numbers
+ 14         set number
+ 15 
+ 16 "
+ 17         filetype plugin on
+ 18         
+ 19 "vi compatability off
+ 20         set nocompatible
+ 21 
+ 22 "search down into subfolders
+ 23 "Provides tab-completion for all file-related tasks
+ 24         set path+=**
+ 25         
+ 26 "Display all matching files whe we tab complete
+ 27         set wildmenu
 
 
 Ubuntu
