@@ -19,24 +19,22 @@ SSH
 	ssh user@domain -p xx     ex: ssh kalandar@192.168.0.10 -p 22
 	rsync (for file transfer)
 	
-	virtualbox settings: network\NAT, Portforwarding: TCP, hostIP:127.0.0.1, hostPort:2222, guestIP:10.0.2.15, guestPort:22
-		             aslo second net adddapter with bridged setting showing up as ip: 192.168.0.11
+	virtualbox settings: 1 net adapter bridge mode (no port forwarding) 
 	
 	also added Openssh server for Windows in add features,and configured to autostart:
 		Controll Panel>System and sequerity>Administrative tools>Services>Open SSH SSH server - rightclock properties
 
 
-	putty.exe to ssh from win10                        to Ubuntu-Thinkpad as K.. using ip: 192.168.0.10 on port 22    (pw: my regular)
-	putty.exe to ssh from win10 to kalandar-Ubuntu in Virtualbox on Win10 as K.. using ip: 127.0.0.1    on port 2222  (pw: my regular)	
-	             ssh from kalandar-Ubuntu inVirtualbox to Ubuntu-Thinkpad as K.. using ip: 192.168.0.10 on port 22    (pw: my regular)
-	iTerminal to ssh from Iphone   to kalandar-Ubuntu in Virtualbox       as K.. using ip: 192.168.0.11 on port 22    (pw: my regular)
-	             ssh from thinkpad to kalandar-Ubuntu in Virtualbox       as K.. using ip: 192.168.0.11 on port 22    (pw: my regular)
-	             ssh from thinkpad to win10                             as arbju using ip: 192.168.0.8  on port 22    (pw: my regular)
+	Setup Arris router Port forwarding and reconfigured Ports for the ssh servers on the machines,  Ext IP is 70.185.182.98
+			
+		Win10		192.168.0.5  on port 22      	(pw: my regular)   (left default port 22) howto in win10 ?? 
+	        ThinkPad 	192.168.0.10 on port 57142   	(pw: my regular) & Configured /etc/ssh/sshd_config for port 57142
+	        Vbox-ubuntu	192.168.0.11 on port 57143	(pw: my regular) & Configured /etc/ssh/sshd_config for port 57143
 	
-	ALSO TRY: trough router and firewall ????    try without wify on phone for ex
+		192.168.56.1 is the address the vbox guests can access their host with (the win10)
 	
-
-	192.168.56.1 is the address the vbox guests can access their host with (the win10)
+	Setup extra admin page for arris router @ 70.185.182.98:8080, also availabe at http://192.168.100.1:8080 
+		(if put to NAT mode- regular admin page (192.168.0.1) dissaperad)		
 
 C
 	https://www.tutorialspoint.com/cprogramming/index.htm	
